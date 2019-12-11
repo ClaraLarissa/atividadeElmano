@@ -14,9 +14,9 @@ export class ProductRepository {
                 .filter((c, index, array) => array.indexOf(c) == index).sort();
         });
     }
-    getSearchProducts(search:string){
+    getProductsPesquisar(pesquisaProduct:string){
         this.products=this.products.filter(function(category){
-            return category.name.toLowerCase().indexOf(search.toLowerCase()) > -1;})
+            return category.name.toLowerCase().indexOf(pesquisaProduct.toLowerCase()) > -1;})
     }
     getProducts(category: string = null): Product[] {
         return this.products

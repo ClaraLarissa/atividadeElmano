@@ -6,9 +6,8 @@
     </div>
     <div class = "row">
         <div class = "col-3 p-2 ">
-            
-            <input type="text" [(ngModel)] = "search" [ngModelOptions]="{standalone: true}" placeholder="Pesquisar">
-            <button (click) = "searchFunction()">Pesquisar</button>
+            <input class="form-control" type="text" [(ngModel)] = "pesquisaProduct" [ngModelOptions]="{standalone: true}" placeholder="Pesquisar por um produto...">
+            <button (click) = "pesquisarProd()" type="button" class="btn btn-primary">Pesquisar</button>
             <button class="btn btn-block btn-outline-primary" (click) = "changeCategory()">
                 Home
             </button>
@@ -22,7 +21,7 @@
             <div *ngFor = "let product of products" class = "card m-1 p-1 bg-light">
                 
                 <h4>
-                    <img width = "15%" height = "15%" [src] = "product.src">
+                    <img class="img-thumbnail" width = "10%" height = "10%" [src] = "product.src">
                     {{product.name}}
                     <span class = "badge badge-pill badge-primary float-right">
                         {{ product.price | currency:"USD" : "symbol" : "2.2-2" }}

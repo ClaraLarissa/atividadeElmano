@@ -11,7 +11,7 @@ export class StoreComponent {
     public selectedCategory = null;
     public productsPerPage = 4;
     public selectedPage = 1;
-    public search : string = " ";
+    public pesquisaProduct : string ;
     constructor(private repository : ProductRepository) { }
 
     get products(): Product[] {
@@ -20,8 +20,8 @@ export class StoreComponent {
             .slice(pageIndex, pageIndex + this.productsPerPage);
     }
 
-    searchFunction(){
-        this.repository.getSearchProducts(this.search);
+    pesquisarProd(){
+        this.repository.getProductsPesquisar(this.pesquisaProduct);
     }
     changePage(newPage: number){
         this.selectedPage = newPage;
